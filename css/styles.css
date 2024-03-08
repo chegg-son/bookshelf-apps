@@ -1,0 +1,321 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink {
+    animation: blink 500ms infinite;
+}
+
+body {
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+input,
+button {
+    font-size: 15px;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    border-radius: 15px;
+}
+
+header h1 {
+    font-size: 55px;
+    color: white;
+    background-color: rgb(51, 210, 30);
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20%;
+    padding-right: 20%;
+    height: 100vh;
+    padding-bottom: 5px;
+    background-color: #f0fff0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.head {
+    background-color: rgb(51, 210, 30);
+    font-size: 15px;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 7px 7px 8px 5px rgba(0, 0, 0, 0.2);
+}
+
+.head h2 {
+    font-weight: bold;
+}
+
+.input-section {
+    margin-top: 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.input-section button {
+    background-color: rgb(51, 210, 30);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+input {
+    margin: 8px 0;
+    width: 100%;
+    padding: 9px;
+    border-radius: 5px;
+}
+
+.input-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.input-checkbox input {
+    width: 20px;
+    margin-left: 3px;
+}
+
+.search-section {
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.search-section .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.search #searchButton {
+    background-color: rgb(51, 210, 30);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    width: 15%;
+    cursor: pointer;
+}
+
+.incomplete-section {
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.complete-section {
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #333333;
+    margin-bottom: 10px;
+}
+
+.action-item {
+    overflow-x: hidden;
+}
+
+.action-item button {
+    height: 100%;
+    border: none;
+    background-color: rgb(51, 210, 30);
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 15px;
+    margin-right: 5px;
+    cursor: pointer;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.inline i {
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.icon-large {
+    font-size: 25px;
+}
+
+#searchResult {
+    list-style: none;
+    display: none;
+}
+
+#searchResult a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 10px;
+    animation-name: zoomIn;
+    animation-duration: 0.4s;
+}
+
+.modal-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#confirmDelete {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#cancelDelete {
+    background-color: #f44336;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal.out {
+    animation-name: fadeOut;
+    animation-duration: 0.4s;
+}
+
+.modal-content.out {
+    animation-name: zoomOut;
+    animation-duration: 0.4s;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.8);
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf Apps</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="root">
+        <div id="confirmDialog" class="modal">
+            <div class="modal-content">
+                <h2>Hapus Buku</h2>
+                <p>Apakah Anda yakin ingin menghapus <span style="font-weight: bold;" id="bookTitle"></span>?</p>
+                <div class="modal-buttons">
+                    <button id="confirmDelete">Na'am</button>
+                    <button id="cancelDelete">Laa</button>
+                </div>
+            </div>
+        </div>
+        <header align="center" class="head">
+            <h1>BOOKSHELF APPS</h1>
+        </header>
+        <main>
+            <section class="input-section">
+                <form>
+                    <div class="input">
+                        <label for="titleInput">Judul Buku</label>
+                        <div class="inline">
+                            <i class="fa-solid fa-book"></i>
+                            <input id="titleInput" type="text" placeholder="Contoh: شرح الثلاثة الاصول" required>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="authorInput">Penulis</label>
+                        <div class="inline">
+                            <i class="fa-solid fa-user-large"></i>
+                            <input id="authorInput" type="text" placeholder="Contoh: الشيخ محمد صالح العتسيمين"
+                                required></label>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="yearInput">Tahun Terbit</label>
+                        <div class="inline">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <input id="yearInput" type="number" placeholder="Tahun Terbit" required>
+                        </div>
+                    </div>
+                    <div class="input-checkbox">
+                        <label for="isCompleteInput">Selesai dibaca</label>
+                        <input id="isCompleteInput" type="checkbox">
+                    </div>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+            <section class="search-section">
+                <h2 align="center">Cari Buku</h2>
+                <div class="search">
+                    <input id="searchInput" type="text" placeholder="Masukkan Judul Buku">
+                </div>
+                <ul id="searchResult">
+                </ul>
+            </section>
+            <section class="incomplete-section">
+                <h2>Incomplete
+                    <hr>
+                    </h3>
+                    <div class="incomplete">
+                        <div class="incomplete-item" id="incomplete-item">
+                        </div>
+                    </div>
+            </section>
+            <section class="complete-section">
+                <h2>Complete
+                    <hr>
+                </h2>
+                <div class="complete">
+                    <div class="complete-item" id="complete-item">
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
+
+<!-- todo -->
+<!-- menggunakan localstorage -->
